@@ -29,6 +29,13 @@ The dataset used for this project is the **Diabetes Dataset**, which contains:
 
 ## File Structure
 
+sonar-mine-vs-rock/
+│
+├── LICENSE                    # License file
+├── README.md                  # Project documentation
+├── sonar_mine_vs_rock.ipynb   # Jupyter Notebook for training and predictions
+├── dataset/                   # Folder containing the dataset
+│   └── sonar_data.csv         # Dataset for classification
 
 ---
 
@@ -39,3 +46,74 @@ The dataset used for this project is the **Diabetes Dataset**, which contains:
 Ensure you have Python installed. Install the required libraries using:
 ```bash
 pip install -r requirements.txt
+```
+
+Running the Project:
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/diabetes-prediction.git
+   cd diabetes-prediction
+   ```
+2. Open the Jupyter Notebook to explore the project:
+   ```
+   jupyter notebook diabetes_prediction.ipynb
+   ```
+3. Run all cells in the notebook to train the model, evaluate its performance, and make predictions.
+
+Model Training
+The project uses Support Vector Machine (SVM) with a linear kernel to classify patients as diabetic or non-diabetic. Key steps include:
+
+Standardizing features using StandardScaler.
+Splitting the dataset into training (80%) and testing (20%) sets.
+Training the model using the SVC class from scikit-learn.
+
+Example Code Snippet:
+```
+from sklearn import svm
+classifier = svm.SVC(kernel="linear")
+classifier.fit(X_train, y_train)
+```
+
+Model Evaluation
+The model achieved the following accuracy:
+
+Training Accuracy: 78.41% 
+
+Test Accuracy: 76.29%
+
+Prediction System
+You can input patient data into the trained model to get a prediction. For example:
+
+```
+input_data = (6, 190, 92, 0, 0, 35.5, 0.278, 66)
+input_array = np.array(input_data).reshape(1, -1)
+input_scaled = scalar.transform(input_array)
+prediction = classifier.predict(input_scaled)
+
+if prediction[0] == 1:
+    print("The patient is diabetic.")
+else:
+    print("The patient is non-diabetic.")
+```
+
+Future Work
+Potential improvements include:
+
+Using non-linear kernels like RBF for SVM to capture complex relationships.
+Implementing cross-validation for better model generalization.
+Adding new features or engineering existing ones to improve predictive accuracy.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Dataset: Kaggle Pima Indians Diabetes Database
+Libraries: scikit-learn, pandas, numpy, matplotlib
+
+```
+
+This README is ready to go for your GitHub repository. It includes all the necessary details about the project, code usage, and future improvements. Let me know if you need further changes or additions!
+```
+
+
