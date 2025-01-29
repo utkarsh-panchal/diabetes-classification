@@ -29,13 +29,13 @@ The dataset used for this project is the **Diabetes Dataset**, which contains:
 
 ## File Structure
 
-sonar-mine-vs-rock/
+diabetes_prediction/
 │
-├── LICENSE                    # License file
-├── README.md                  # Project documentation
-├── sonar_mine_vs_rock.ipynb   # Jupyter Notebook for training and predictions
-├── dataset/                   # Folder containing the dataset
-│   └── sonar_data.csv         # Dataset for classification
+├── LICENSE                      # License file
+├── README.md                    # Project documentation
+├── diabetes_prediction.ipynb    # Jupyter Notebook for training and predictions
+├── diabetes_prediction_dataset  # Dataset for classification
+                 
 
 ---
 
@@ -47,6 +47,8 @@ Ensure you have Python installed. Install the required libraries using:
 ```bash
 pip install -r requirements.txt
 ```
+
+--- 
 
 Running the Project:
 
@@ -60,6 +62,8 @@ Running the Project:
    jupyter notebook diabetes_prediction.ipynb
    ```
 3. Run all cells in the notebook to train the model, evaluate its performance, and make predictions.
+
+---
 
 Model Training
 The project uses Support Vector Machine (SVM) with a linear kernel to classify patients as diabetic or non-diabetic. Key steps include:
@@ -75,12 +79,16 @@ classifier = svm.SVC(kernel="linear")
 classifier.fit(X_train, y_train)
 ```
 
+---
+
 Model Evaluation
 The model achieved the following accuracy:
 
 Training Accuracy: 78.41% 
 
 Test Accuracy: 76.29%
+
+---
 
 Prediction System
 You can input patient data into the trained model to get a prediction. For example:
@@ -97,6 +105,8 @@ else:
     print("The patient is non-diabetic.")
 ```
 
+---
+
 Future Work
 Potential improvements include:
 
@@ -104,16 +114,16 @@ Using non-linear kernels like RBF for SVM to capture complex relationships.
 Implementing cross-validation for better model generalization.
 Adding new features or engineering existing ones to improve predictive accuracy.
 
+---
+
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
 
 Acknowledgments
 Dataset: Kaggle Pima Indians Diabetes Database
 Libraries: scikit-learn, pandas, numpy, matplotlib
 
-```
-
-This README is ready to go for your GitHub repository. It includes all the necessary details about the project, code usage, and future improvements. Let me know if you need further changes or additions!
-```
 
 
